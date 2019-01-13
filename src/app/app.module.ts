@@ -28,7 +28,8 @@ import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
     APP_ROUTES,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireStorageModule
   ],
   providers: [
     CargaImagenesService

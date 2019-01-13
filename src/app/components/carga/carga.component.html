@@ -14,7 +14,14 @@
         <h4>Cargar archivos</h4>
 
         <button (click)="cargaImagenes()" [disabled]="archivos.length === 0" class="btn btn-success">Cargar a firebase</button>
-        <button (click)="limpiarArchivos()" class="btn btn-danger">Limpiar</button>
+        <button style="margin-left:10px;" (click)="limpiarArchivos()" class="btn btn-danger">Limpiar</button>
+        <div class="folder-options">
+            <div class="select">
+                <select (change)="onChange($event.target.value)">
+                    <option *ngFor="let item of list; let idx = index ">{{item}}</option>
+                </select>
+            </div>
+        </div>
 
         <table class="table">
             <thead class="thead-dark">

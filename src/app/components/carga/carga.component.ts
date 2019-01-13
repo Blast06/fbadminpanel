@@ -10,20 +10,55 @@ import { Component, OnInit } from '@angular/core';
 export class CargaComponent implements OnInit {
 
   archivos: FileItem[] =[];
-  estaSobreElemento =  false;
-  constructor(public _cargaImagenes:CargaImagenesService) { }
 
+  list:string[];
+  
+  
+ 
+  estaSobreElemento =  false;
+  nombreCarpeta:string;
+  constructor(public _cargaImagenes:CargaImagenesService) {
+    
+    this.list = [
+      "Frases de amor",
+      "Frases cortas",
+      "juntos x 1oopre",
+      "Frases atrevidas",
+      "saludos y despedidas",
+      "Amor graciosas",
+      "Poemas de amor",
+      "Amor a Distancia",
+      "Preguntas de Amor",
+      "Cartas de Amor",
+      "Frases de Besos",
+      "Disculpas de amor",
+      "Imagenes de te extrano",
+    ];
+  
+  }
+
+  onChange(deviceValue) {
+    console.log(deviceValue);
+}
   ngOnInit() {
   }
 
   
 
-  cargaImagenes(){
-    this._cargaImagenes.cargarImagenesFirebase( this.archivos );
+  cargaImagenes(indice:number){
+    console.log(indice);
+    this._cargaImagenes.cargarImagenesFirebase( this.archivos,indice );
   }
 
   limpiarArchivos(){
     this.archivos = [];
+  }
+
+  irCarpeta(item:any){
+
+
+
+
   }
 
 }
