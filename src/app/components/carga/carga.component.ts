@@ -45,9 +45,9 @@ export class CargaComponent implements OnInit {
 
   
 
-  cargaImagenes(indice:number){
-    console.log(indice);
-    this._cargaImagenes.cargarImagenesFirebase( this.archivos,indice );
+  cargaImagenes(){
+    
+    this._cargaImagenes.cargarImagenesFirebase( this.archivos);
   }
 
   limpiarArchivos(){
