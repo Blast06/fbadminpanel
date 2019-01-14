@@ -12,9 +12,7 @@ export class CargaComponent implements OnInit {
   archivos: FileItem[] =[];
 
   list:string[];
-  
-  
- 
+    
   estaSobreElemento =  false;
   nombreCarpeta:string;
   constructor(public _cargaImagenes:CargaImagenesService) {
@@ -34,11 +32,19 @@ export class CargaComponent implements OnInit {
       "Disculpas de amor",
       "Imagenes de te extrano",
     ];
+
+    //esta parte se puede mejorar con el codigo que se borro, para ponerlo con un switch y asi poder
+    // cambiar el nombre de las carpitas, mas info ver: ( el commit en github 
+    // https://github.com/Blast06/fbadminpanel/commit/3ee7afbf7b1401312e686044d78c68f03549f058
+    // ver el carga-imagenes.ts )
   
   }
 
   onChange(deviceValue) {
     console.log(deviceValue);
+    this.nombreCarpeta = deviceValue;
+    console.log(this.nombreCarpeta);
+    
 }
   ngOnInit() {
   }
@@ -47,7 +53,7 @@ export class CargaComponent implements OnInit {
 
   cargaImagenes(){
     
-    this._cargaImagenes.cargarImagenesFirebase( this.archivos);
+    this._cargaImagenes.cargarImagenesFirebase( this.archivos, this.nombreCarpeta);
   }
 
   limpiarArchivos(){

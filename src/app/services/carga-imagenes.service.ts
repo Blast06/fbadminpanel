@@ -28,70 +28,17 @@ export class CargaImagenesService {
 
 
   private guardarImagen(imagen: { nombre: string, url: string }) {
+    
     this.db.collection(`/${this.CARPETA_IMAGENES}`)
       .add(imagen);
     // this.db.collection('/categorias/').add(this.NOMBRE_CATEGORIA);
     // console.log(this.db.collection('/categorias'));
   }
 
-  cargarImagenesFirebase(imagenes: FileItem[],) {
-    // switch (indice) {
-    //   case 1:
-    //     this.CARPETA_IMAGENES = 'frases_amor';
-    //     break;
+  cargarImagenesFirebase(imagenes: FileItem[],nombreCarpeta?:string) {
 
-    //   case 2:
-    //     this.CARPETA_IMAGENES = 'frases_cortas';
-    //     break;
-
-    //   case 3:
-    //     this.CARPETA_IMAGENES = 'frases_juntos_100pre';
-    //     break;
-
-    //   case 4:
-    //     this.CARPETA_IMAGENES = 'frases_atrevidas';
-    //     break;
-
-    //   case 5:
-    //     this.CARPETA_IMAGENES = 'frases_saludos_despedidas';
-    //     break;
-
-    //   case 6:
-    //     this.CARPETA_IMAGENES = 'frases_amor_graciosas';
-    //     break;
-
-    //   case 7:
-    //     this.CARPETA_IMAGENES = 'frases_poemas_amor';
-    //     break;
-
-    //   case 8:
-    //     this.CARPETA_IMAGENES = 'frases_amor_distancia';
-    //     break;
-
-    //   case 9:
-    //     this.CARPETA_IMAGENES = 'frases_preguntas_amor';
-    //     break;
-
-    //   case 10:
-    //     this.CARPETA_IMAGENES = 'frases_cartas_amor';
-    //     break;
-
-    //   case 11:
-    //     this.CARPETA_IMAGENES = 'frases_besos';
-    //     break;
-
-    //   case 12:
-    //     this.CARPETA_IMAGENES = 'frases_disculpas_amor';
-    //     break;
-
-    //   case 13:
-    //     this.CARPETA_IMAGENES = 'frases_te_extrano';
-    //     break;
-
-
-    //   default:
-    //     break;
-    // }
+    this.CARPETA_IMAGENES = nombreCarpeta;
+    
     //obtener la referencia al storage(el root)
     const storageRef = firebase.storage().ref();
 

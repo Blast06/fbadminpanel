@@ -16,7 +16,7 @@ export class FotosComponent implements OnInit {
   items: Observable<Item[]>;
 
   constructor(private afs: AngularFirestore) { 
-    this.itemsCollection = afs.collection<Item>('img'); //donde 'img' es el nombre de la carpeta
+    this.itemsCollection = afs.collection<Item>('Frases cortas'); //donde 'img' es el nombre de la carpeta
     this.items = this.itemsCollection.valueChanges();
 
    }
