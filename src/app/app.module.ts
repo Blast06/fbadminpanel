@@ -1,3 +1,4 @@
+
 import { APP_ROUTES } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -12,6 +13,7 @@ import { CargaImagenesService } from './services/carga-imagenes.service';
 import { CargaComponent } from './components/carga/carga.component';
 import { FotosComponent } from './components/fotos/fotos.component';
 import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
+import { MyappsComponent } from './components/myapps/myapps.component';
 
 
 @NgModule({
@@ -19,9 +21,10 @@ import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
     AppComponent,
     FotosComponent,
     CargaComponent,
-    NgDropFilesDirective
-    
-    
+    NgDropFilesDirective,
+    MyappsComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
     AngularFireStorageModule
   ],
   providers: [
-    CargaImagenesService
+    CargaImagenesService,
+
   ],
   bootstrap: [AppComponent]
 })
