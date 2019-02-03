@@ -1,6 +1,7 @@
-import { CargaImagenesService } from './../../services/carga-imagenes.service';
-import { FileItem } from './../../models/file-item';
 import { Component, OnInit } from '@angular/core';
+
+import { FileItem } from './../../models/file-item';
+import { CargaImagenesService } from './../../services/carga-imagenes.service';
 
 @Component({
   selector: 'app-carga',
@@ -15,6 +16,7 @@ export class CargaComponent implements OnInit {
 
   estaSobreElemento =  false;
   nombreCarpeta = 'Frases de amor';
+
   constructor(public _cargaImagenes: CargaImagenesService) {
 
     this.list = [
@@ -53,7 +55,7 @@ export class CargaComponent implements OnInit {
 
   cargaImagenes() {
 
-    this._cargaImagenes.cargarImagenesFirebase( this.archivos, this.nombreCarpeta);
+    this._cargaImagenes.cargarImagenesFirebase( this.archivos, this.nombreCarpeta, 1);
   }
 
   limpiarArchivos() {
